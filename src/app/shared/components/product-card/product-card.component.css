@@ -1,0 +1,22 @@
+.card {
+  margin-bottom: 30px;
+}
+
+.card-footer {
+  padding: 0;
+  background: #fff;
+}
+
+.card-footer button {
+  cursor: pointer;
+}
+
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-footer button {
+  cursor: pointer;
+  /* text-transform: uppercase; */
+}

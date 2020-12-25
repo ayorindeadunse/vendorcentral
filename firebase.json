@@ -1,0 +1,6 @@
+{
+  "hosting": {
+    "public": "dist/vendor-central",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}
