@@ -1,3 +1,4 @@
+import { ActivateEmailComponent } from "./core/components/activate-email/activate-email.component";
 import { NgModule } from "@angular/core";
 import { AngularFireModule } from "@angular/fire";
 import { BrowserModule } from "@angular/platform-browser";
@@ -31,6 +32,7 @@ firebase.initializeApp(environment.firebase);
     RouterModule.forRoot([
       { path: "", component: ProductsComponent },
       { path: "login", component: LoginComponent },
+      { path: "activate-email", component: ActivateEmailComponent },
     ]),
     NgbModule,
   ],

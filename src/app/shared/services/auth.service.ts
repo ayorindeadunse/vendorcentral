@@ -22,6 +22,9 @@ export class AuthService {
   private token: string;
   private tokenTimer: any;
   private userId: string;
+
+  //change the variable to a loggedonuser object tomorrow
+  private status: string;
   // set the other user properties and get them in the response.
   private authStatusListener = new Subject<boolean>();
 
@@ -141,10 +144,19 @@ export class AuthService {
     //implement calling of rest api logic
     const authData: AuthData = { email: email, password: password };
     this.http
-      .post<{ token: string; expiresIn: number; user: { userId: string } }>(
-        BACKEND_URL + "login",
-        authData
-      )
+      .post<{
+        token: string;
+        expiresIn: number;
+        user: {
+          userId: string;
+          isAdmin: boolean;
+          status: string;
+          mobile: string;
+          firstName: string;
+          lastName: string;
+          avatar: string;
+        };
+      }>(BACKEND_URL + "login", authData)
       .subscribe(
         (response) => {
           // console.log(response);
@@ -163,7 +175,14 @@ export class AuthService {
             );
             console.log(expirationDate);
             this.saveAuthData(token, expirationDate, this.userId);
-            this.router.navigate(["/"]);
+
+            // get loggedon status
+            // remember to refractor this code
+            this.status = response.user.status;
+            // console.log(this.status);
+            if (this.status === "Pending")
+              this.router.navigate(["/activate-email"]);
+            else if (this.status === "Active") this.router.navigate(["/"]);
           }
         },
         (error) => {

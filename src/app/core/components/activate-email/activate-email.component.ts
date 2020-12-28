@@ -1,4 +1,8 @@
+import { environment } from "./../../../../environments/environment";
 import { Component, OnInit } from "@angular/core";
+
+const BACKEND_URL =
+  environment.apiUrl + "/activateUser/verification/get-activation-email";
 
 @Component({
   selector: "app-activate-email",
@@ -9,6 +13,6 @@ export class ActivateEmailComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  url =
-    "http://localhost:9008/api/activateUser/verification/get-activation-email";
+
+  url = BACKEND_URL;
 }
