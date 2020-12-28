@@ -1,4 +1,5 @@
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { FormsModule } from "@angular/forms";
@@ -32,6 +33,7 @@ import { UserService } from "./services/user.service";
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
+    HttpClientModule,
     NgbModule,
   ],
   exports: [
@@ -46,6 +48,7 @@ import { UserService } from "./services/user.service";
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
+    HttpClientModule,
     [NgbModule],
   ],
   providers: [

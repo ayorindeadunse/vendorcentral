@@ -7,6 +7,9 @@
 $primary-color: forestgreen;
 $primary-color-hover: forestgreen;
 
+$primary-color-google: #db4437;
+$primary-color-facebook: #4267b2;
+
 body {
   padding-top: 80px;
 }
@@ -64,6 +67,15 @@ h3 {
   border-color: $primary-color;
 }
 
+.btn-primary-google {
+  background-color: $primary-color-google;
+  border-color: $primary-color-google;
+}
+
+.btn-primary-fb {
+  background-color: $primary-color-facebook;
+  border-color: $primary-color-facebook;
+}
 .btn-primary:hover {
   background-color: $primary-color-hover;
   border-color: $primary-color-hover;

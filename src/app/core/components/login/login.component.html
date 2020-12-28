@@ -1,4 +1,4 @@
-<form class class="form-signin" #f="ngForm" (ngSubmit)="signIn(f.value)">
+<form class class="form-signin" #f="ngForm" (ngSubmit)="signIn(f)">
   <h2 class="form-signin-heading">Please sign in</h2>
   <div *ngIf="invalidLogin" class="alert alert-danger">
     Invalid username and/or password.
@@ -26,10 +26,10 @@
   />
   <button class="btn btn-primary btn-block" type="submit">Sign In</button>
   <br />
-  <button (click)="login()" class="btn btn btn-primary-google btn-block">
+  <button (click)="loginG()" class="btn btn btn-primary-google btn-block">
     Login with Google
   </button>
-  <button (click)="login()" class="btn btn btn-primary-fb btn-block">
+  <button (click)="loginF()" class="btn btn btn-primary-fb btn-block">
     Login with Facebook
   </button>
 </form>
