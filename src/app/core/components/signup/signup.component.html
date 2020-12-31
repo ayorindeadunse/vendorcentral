@@ -1,0 +1,106 @@
+<form class="form-registration" #f="ngForm" (ngSubmit)="register(f.value)">
+  <h2 class="form-signin-heading" align="center">
+    Create An Account with Vendor Central
+  </h2>
+  <!--<div *ngIf="" class="alert alert-danger">
+    Invalid username and/or password.
+  </div>-->
+  <div class="form-group">
+    <label for="firstName" class="sr-only">First Name</label>
+    <input
+      type="text"
+      id="firstName"
+      name="firstName"
+      #firstName="ngModel"
+      ngModel
+      class="form-control"
+      placeholder="first Name"
+      required
+      autofocus
+      class="form-control"
+    />
+    <div
+      class="alert alert-danger"
+      *ngIf="firstName.touched && !firstName.valid"
+    >
+      <div *ngIf="firstName.errors.required">First name is required.</div>
+    </div>
+  </div>
+
+  <!-- <div *ngIf="f.control.firstName.errors.required" class="alert alert-danger">
+    Name is required.
+  </div>-->
+  <div class="form-group">
+    <br />
+    <label for="lastName" class="sr-only">Last Name</label>
+    <input
+      type="text"
+      id="lastName"
+      name="lastName"
+      #lastName="ngModel"
+      ngModel
+      class="form-control"
+      placeholder="lastName"
+      required
+      class="form-control"
+    />
+    <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
+      <div *ngIf="lastName.errors.required">Last Name is required.</div>
+    </div>
+  </div>
+  <br />
+  <div class class="form-group">
+    <label for="mobile" class="sr-only">Mobile</label>
+    <input
+      type="number"
+      id="mobile"
+      name="mobile"
+      #mobile="ngModel"
+      ngModel
+      class="form-control"
+      placeholder="mobile"
+      required
+    />
+    <div class="alert alert-danger" *ngIf="mobile.touched && !mobile.valid">
+      <div *ngIf="mobile.errors.required">Mobile is required.</div>
+    </div>
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="email" class="sr-only">Email</label>
+    <input
+      type="text"
+      id="email"
+      name="email"
+      ngModel
+      #email="ngModel"
+      class="form-control"
+      placeholder="email"
+      required
+    />
+    <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+      <div *ngIf="email.errors.required">Email Address is required.</div>
+    </div>
+  </div>
+  <br />
+  <div class="form-group">
+    <label for="password" class="sr-only">Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      ngModel
+      #password="ngModel"
+      class="form-control"
+      placeholder="Password"
+      required
+    />
+    <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+      <div *ngIf="password.errors.required">Password is required.</div>
+    </div>
+  </div>
+  <br />
+  <button class="btn btn-lg btn-primary btn-block" type="submit">
+    Register
+  </button>
+</form>

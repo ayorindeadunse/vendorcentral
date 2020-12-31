@@ -1,3 +1,5 @@
+import { ActivatedRoute } from "@angular/router";
+import { Router } from "@angular/router";
 import { Subscription } from "rxjs";
 import { Component, OnDestroy, OnInit } from "@angular/core";
 import { AuthService } from "../../../shared/services/auth.service";
@@ -16,7 +18,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   // Create a subscription property
   private authStatusSub: Subscription;
 
-  constructor(private auth: AuthService) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.authStatusSub = this.auth
@@ -26,6 +32,10 @@ export class LoginComponent implements OnInit, OnDestroy {
       });
   }
 
+  // redirect to registration page
+  handleRegister() {
+    this.router.navigate(["/signup"]);
+  }
   signIn(form: NgForm) {
     // call http service
     this.auth.serverLogin(form.value.email, form.value.password);
