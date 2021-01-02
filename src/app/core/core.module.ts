@@ -6,6 +6,7 @@ import { BsNavbarComponent } from "./components/bs-navbar/bs-navbar.component";
 import { HomeComponent } from "./components/home/home.component";
 import { LoginComponent } from "./components/login/login.component";
 import { ActivateEmailComponent } from "./components/activate-email/activate-email.component";
+import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { ActivateEmailComponent } from "./components/activate-email/activate-ema
     HomeComponent,
     LoginComponent,
     ActivateEmailComponent,
+    SignupComponent,
   ],
   imports: [
     SharedModule,

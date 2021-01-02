@@ -1,3 +1,4 @@
+import { SignupComponent } from "./core/components/signup/signup.component";
 import { ActivateEmailComponent } from "./core/components/activate-email/activate-email.component";
 import { NgModule } from "@angular/core";
 import { AngularFireModule } from "@angular/fire";
@@ -33,6 +34,7 @@ firebase.initializeApp(environment.firebase);
       { path: "", component: ProductsComponent },
       { path: "login", component: LoginComponent },
       { path: "activate-email", component: ActivateEmailComponent },
+      { path: "signup", component: SignupComponent },
     ]),
     NgbModule,
   ],

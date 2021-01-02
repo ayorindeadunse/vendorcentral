@@ -1,4 +1,4 @@
-<form class="form-registration" #f="ngForm" (ngSubmit)="register(f.value)">
+<form class="form-registration" #f="ngForm" (ngSubmit)="register(f)">
   <h2 class="form-signin-heading" align="center">
     Create An Account with Vendor Central
   </h2>
@@ -95,8 +95,15 @@
       placeholder="Password"
       required
     />
+    <br />
+    <label>
+      <input type="checkbox" ngModel name="accepted" /> By checking this box you
+      have given consent to our terms and conditions as well as our privacy
+      policy.
+    </label>
     <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
       <div *ngIf="password.errors.required">Password is required.</div>
+      <!--<div *ngIf="password.errors?.pattern">Password is Invalid.</div>-->
     </div>
   </div>
   <br />

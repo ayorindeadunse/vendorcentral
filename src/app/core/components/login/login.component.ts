@@ -1,4 +1,3 @@
-import { ActivatedRoute } from "@angular/router";
 import { Router } from "@angular/router";
 import { Subscription } from "rxjs";
 import { Component, OnDestroy, OnInit } from "@angular/core";
@@ -20,9 +19,9 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   constructor(
     private auth: AuthService,
-    private router: Router,
-    private route: ActivatedRoute
-  ) {}
+    private router: Router
+  ) // private route: ActivatedRoute
+  {}
 
   ngOnInit() {
     this.authStatusSub = this.auth
